@@ -41,6 +41,9 @@
       "last 1 safari version"
     ]
   },
+  "engines": {
+    "node": ">=16"
+  },
   "devDependencies": {
     "@craco/craco": "^6.4.3",
     "craco-esbuild": "^0.5.0"
