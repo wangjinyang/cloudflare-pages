@@ -1,5 +1,6 @@
 // craco.config.js
 const CracoEsbuildPlugin = require('craco-esbuild');
+const { GenerateSW } = require('workbox-webpack-plugin');
 
 module.exports = {
   plugins: [
@@ -25,6 +26,14 @@ module.exports = {
           },
         },
       },
-    },
+    }
   ],
+  webpack: {
+    plugins: {
+      add: [
+        new GenerateSW({
+        }),
+      ], /* An array of plugins */
+    },
+  },
 };

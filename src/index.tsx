@@ -15,3 +15,17 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+// Register A service worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register(`/service-worker.js`)
+      .then(function(registration) {
+        // Registration was successful
+        console.log('[success] scope: ', registration.scope);
+      }, function(err) {
+        // registration failed :(
+        console.log('[fail]: ', err);
+      });
+  });
+}
